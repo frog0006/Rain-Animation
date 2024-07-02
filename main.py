@@ -66,12 +66,11 @@ cloud_img3 = pygame.image.load('images/cloud_img3.png')
 
 # Audio
 rain_sfx = pygame.mixer.Sound('audios/rain_sfx.wav')
-rain_sfx.play()  # Constantly plays rain audio
+rain_sfx.play(loops=-1)  # Constantly plays rain audio
 thunder_sfx = pygame.mixer.Sound('audios/thunder_sfx.mp3')
 next_thunder_time = time.time() + random.randint(1, 10)  # Schedule first thunder
 thunder_ambience = pygame.mixer.Sound('audios/thunder_ambience.mp3')
 next_thunderAmbience_time = time.time() + random.randint(5, 10)  # Schedule first thunder ambience sfx
-
 
 # Window setup
 wn_width = 700
@@ -92,7 +91,7 @@ cloud_speed = [random.randint(1, 2) for _ in range(3)]  # Random speed for each 
 
 # Transparency variables
 transparency = random.randint(20, 220)
-transparency_direction = 1  # 1 for increasing, -1 for decreasing
+transparency_direction = 1
 transparency_step = 1  # How much to change the transparency each frame
 
 # Lightning variables
